@@ -1,0 +1,9 @@
+.idea
+*.log
+*.iml
+*.DS_Store
+
+node_modules
+coverage
+nohup.out
+dist

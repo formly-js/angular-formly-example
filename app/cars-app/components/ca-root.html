@@ -1,0 +1,12 @@
+<div class="ca-root">
+  <form name="vm.form" ng-submit="vm.onSubmit()">
+    <formly-form model="vm.model" fields="vm.fields" form="vm.form">
+      <button type="submit" ng-disabled="vm.form.$invalid">Submit</button>
+    </formly-form>
+  </form>
+
+  <div ng-if="vm.form.$submitted" class="results">
+    <pre>{{vm.model | json}}</pre>
+  </div>
+
+</div>

@@ -1,0 +1,6 @@
+npm run build
+
+npm i -g surge
+
+# must have SURGE_LOGIN and SURGE_TOKEN set for this command to work
+surge -p dist -d angular-formly-example.surge.sh

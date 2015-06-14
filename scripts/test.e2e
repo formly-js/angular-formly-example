@@ -1,0 +1,17 @@
+# Install simple http server and protractor
+npm install -g protractor
+
+# Download and install selenium webdrivers
+webdriver-manager update
+
+# Run web driver in background, keeping in mind it takes a few seconds to become responsive
+nohup bash -c "webdriver-manager start 2>&1 &" && sleep 9
+
+# Run local website, my website is contained within the ./app folder
+node_modules/http-server/bin/http-server dist > /dev/null &
+
+# Run protractor tests
+protractor protractor.conf.js
+
+# Kill http-server
+lsof -i tcp:"8080" | awk 'NR!=1 {print $2}' | xargs kill
